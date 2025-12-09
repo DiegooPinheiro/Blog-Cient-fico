@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
     <!-- Header/Navigation -->
-    <header :class="['sticky top-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700 transition-opacity', modalAberto ? 'opacity-0 pointer-events-none' : 'opacity-100']">
+    <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700 transition-opacity" :class="{ 'opacity-0 pointer-events-none': modalAberto, 'opacity-100': !modalAberto }">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
           <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
