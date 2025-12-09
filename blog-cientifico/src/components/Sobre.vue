@@ -8,11 +8,11 @@
 
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Left Side - Image/Icon -->
-        <div class="relative">
+        <div class="relative h-full">
           <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl opacity-20 blur-2xl"></div>
-          <div class="relative bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-12 border border-slate-600">
-            <div class="text-7xl text-center">🔭</div>
-            <p class="text-center text-slate-300 mt-6 text-lg">Observando as estrelas e desvendando os mistérios do cosmos</p>
+          <div class="relative bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-12 border border-slate-600 h-full flex flex-col justify-center items-center">
+            <img src="/TelescopiorGalaxia.png" alt="Telescópio" class="w-full h-auto object-contain mb-8">
+            <p class="text-center text-white text-2xl leading-relaxed font-bold">Observando as estrelas e desvendando os mistérios do cosmos</p>
           </div>
         </div>
 

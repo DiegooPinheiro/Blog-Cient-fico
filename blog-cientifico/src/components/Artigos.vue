@@ -31,8 +31,8 @@
           :key="artigo.date"
           class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600 hover:border-pink-500 transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/20 hover:-translate-y-2"
         >
-          <!-- Image Container -->
-          <div class="relative h-64 overflow-hidden bg-slate-900">
+            <!-- Image Container -->
+            <div class="relative h-64 overflow-hidden bg-slate-900">
             <img 
               v-if="artigo.media_type === 'image'"
               :src="artigo.url" 
@@ -43,10 +43,10 @@
               🎥
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-          </div>
+            </div>
 
-          <!-- Content -->
-          <div class="p-6 relative">
+            <!-- Content -->
+            <div class="p-6 relative">
             <div class="flex items-center justify-between mb-3">
               <span class="text-xs font-semibold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">
                 {{ formatarData(artigo.date) }}
@@ -77,8 +77,8 @@
               </button>
             </div>
           </div>
+          </div>
         </div>
-      </div>
 
       <!-- Modal -->
       <Teleport to="body">
@@ -239,6 +239,142 @@ const artigosExemplo = [
     title: 'Lua Crescente sobre a Terra',
     explanation: 'Esta imagem da Lua em crescente foi capturada pelo módulo de comando da Apollo 8. Mostra a beleza sutil de nosso satélite natural contra o fundo do espaço escuro.',
     url: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-25',
+    title: 'Buraco Negro Supermassivo - Event Horizon',
+    explanation: 'Um buraco negro supermassivo é um fenômeno cósmico extraordinário. No centro da maioria das galáxias, incluindo a nossa, existem buracos negros bilhões de vezes mais massivos que o Sol.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/ESA'
+  },
+  {
+    date: '2025-11-24',
+    title: 'Aurora Boreal - Dança das Luzes',
+    explanation: 'A Aurora Boreal é um fenômeno natural de luzes coloridas no céu noturno das regiões polares. Causada pela interação de partículas solares com a magnetosfera da Terra.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-23',
+    title: 'Aglomerado de Galáxias - Cosmic Web',
+    explanation: 'Um aglomerado de galáxias é um grande agregado de galáxias ligadas pela gravidade. O Aglomerado de Virgem é o mais próximo de nós, a cerca de 50-60 milhões de anos-luz.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/ESA'
+  },
+  {
+    date: '2025-11-22',
+    title: 'Marte - O Planeta Vermelho',
+    explanation: 'Marte é o quarto planeta do sistema solar. Recebe o apelido de "Planeta Vermelho" pela aparência avermelhada causada pela óxido de ferro em sua superfície.',
+    url: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/JPL-Caltech'
+  },
+  {
+    date: '2025-11-21',
+    title: 'Cometa Halley - Visitante Periódico',
+    explanation: 'O Cometa Halley é um cometa periódico visível a olho nu. Retorna a cada 75-76 anos e é um dos cometas mais famosos da história da astronomia.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-20',
+    title: 'Espaçonave Voyager - Mensageira Estelar',
+    explanation: 'A Voyager 1 é a sonda espacial mais distante da humanidade. Lançada em 1977, viajou além da heliosfera e agora explora o espaço interestelar.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/JPL-Caltech'
+  },
+  {
+    date: '2025-11-19',
+    title: 'Telescópio Espacial James Webb',
+    explanation: 'O Telescópio Espacial James Webb é o sucessor do Hubble. Com seu espelho segmentado e infravermelhos avançados, observa as galáxias mais distantes e primordiais do universo.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/ESA/CSA'
+  },
+  {
+    date: '2025-11-18',
+    title: 'Auroras de Jupiiter - Fenômenos Magnéticos',
+    explanation: 'As auroras de Júpiter são muito mais potentes que as da Terra. São geradas pela interação do vento solar com o forte campo magnético de Júpiter.',
+    url: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/JPL-Caltech'
+  },
+  {
+    date: '2025-11-17',
+    title: 'Gêiseres de Encélado - Vida Potencial',
+    explanation: 'Encélado, uma lua de Saturno, possui gêiseres de água que sugerem um oceano subterrâneo. Cientistas acreditam que poderia haver vida microbiana nesse oceano.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/JPL-Caltech'
+  },
+  {
+    date: '2025-11-16',
+    title: 'Cratera Tycho na Lua - Impacto Cósmica',
+    explanation: 'A cratera Tycho é uma das crateras de impacto mais proeminentes da Lua. Seus raios brilhantes se estendem por centenas de quilômetros.',
+    url: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-15',
+    title: 'Exoplaneta Proxima Centauri b',
+    explanation: 'Proxima Centauri b é um exoplaneta semelhante à Terra que orbita a estrela mais próxima do nosso Sistema Solar, a apenas 4,24 anos-luz de distância.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'ESO'
+  },
+  {
+    date: '2025-11-14',
+    title: 'Cinturão de Kuiper - Região Gelada',
+    explanation: 'O Cinturão de Kuiper é uma região do espaço além da órbita de Netuno repleta de objetos de gelo e corpos celestes. Plutão é o objeto mais famoso desta região.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-13',
+    title: 'Nuvem de Oort - Fronteira do Sistema Solar',
+    explanation: 'A Nuvem de Oort é uma casca hipotética de objetos heliocentricos que circundam o Sistema Solar. Marca o limite gravitacional de influência do Sol.',
+    url: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA'
+  },
+  {
+    date: '2025-11-12',
+    title: 'Erupção Solar - Tempestade Magnética',
+    explanation: 'Erupções solares são explosões súbitas de energia magnética na superfície do Sol. Podem causar tempestades geomagnéticas na Terra.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/SDO'
+  },
+  {
+    date: '2025-11-11',
+    title: 'Planícies de Marte - Terraformação Futura',
+    explanation: 'As planícies de Marte são terrenos planos e antigos que oferecem potencial para futuras colônias humanas. Cientistas estudam como terraformar o planeta.',
+    url: 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/JPL-Caltech'
+  },
+  {
+    date: '2025-11-10',
+    title: 'Rede Cósmica - Estrutura do Universo',
+    explanation: 'A rede cósmica é a estrutura em larga escala do universo, composta por filamentos de matéria que conectam aglomerados de galáxias. Separados por imensos vazios.',
+    url: 'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=600&h=400&fit=crop',
+    media_type: 'image',
+    copyright: 'NASA/ESA'
+  },
+  {
+    date: '2025-11-09',
+    title: 'Fusão Nuclear no Sol - Motor do Universo',
+    explanation: 'O Sol gera energia através da fusão nuclear, convertendo hidrogênio em hélio em seu núcleo. Este processo alimenta toda a vida na Terra.',
+    url: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=600&h=400&fit=crop',
     media_type: 'image',
     copyright: 'NASA'
   }
