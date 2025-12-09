@@ -63,4 +63,5 @@ import Contato from './components/Contato.vue'
 </script>
 
 <style scoped>
+/* Smooth scroll is applied globally in main.js or style.css */
 </style>
