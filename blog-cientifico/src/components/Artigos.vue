@@ -160,6 +160,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
+const emit = defineEmits(['modal-opened', 'modal-closed'])
+
 const artigos = ref([])
 const loading = ref(true)
 const error = ref(null)
@@ -418,10 +420,12 @@ const formatarData = (data) => {
 
 const abrirArtigo = (artigo) => {
   artigoSelecionado.value = artigo
+  emit('modal-opened')
 }
 
 const fecharModal = () => {
   artigoSelecionado.value = null
+  emit('modal-closed')
 }
 
 onMounted(() => {

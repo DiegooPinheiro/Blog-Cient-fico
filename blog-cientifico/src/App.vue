@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
     <!-- Header/Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700">
+    <header :class="['sticky top-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700 transition-opacity', modalAberto ? 'opacity-0 pointer-events-none' : 'opacity-100']">
       <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
           <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
@@ -39,13 +39,13 @@
     </section>
 
     <!-- Sobre Section -->
-    <Sobre />
+    <Sobre @modal-opened="modalAberto = true" @modal-closed="modalAberto = false" />
 
     <!-- Artigos Section -->
-    <Artigos />
+    <Artigos @modal-opened="modalAberto = true" @modal-closed="modalAberto = false" />
 
     <!-- Contato Section -->
-    <Contato />
+    <Contato @modal-opened="modalAberto = true" @modal-closed="modalAberto = false" />
 
     <!-- Footer -->
     <footer class="bg-slate-950 border-t border-slate-700 py-8 px-4">
@@ -57,9 +57,12 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import Sobre from './components/Sobre.vue'
 import Artigos from './components/Artigos.vue'
 import Contato from './components/Contato.vue'
+
+const modalAberto = ref(false)
 </script>
 
 <style scoped>
