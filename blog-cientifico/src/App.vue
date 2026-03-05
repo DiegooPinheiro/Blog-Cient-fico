@@ -10,66 +10,154 @@
     <div class="relative z-10">
       <!-- Header/Navigation -->
       <header
-        class="sticky top-0 z-50 backdrop-blur-lg bg-slate-900/70 border-b border-slate-700 transition-opacity"
+        class="fixed w-full top-0 z-50 backdrop-blur-lg bg-slate-900/80 border-b border-slate-700 transition-opacity duration-300"
         :class="{
-          'opacity-0 pointer-events-none': modalAberto,
-          'opacity-100': !modalAberto,
+          'opacity-0 pointer-events-none': modalAberto && !menuMobileAberto,
+          'opacity-100': !modalAberto || menuMobileAberto,
         }"
       >
         <nav
           class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
         >
-          <div class="flex items-center gap-2">
+          <!-- Logo -->
+          <div class="flex items-center gap-2 z-50">
             <div
               class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center"
             >
               <Rocket class="text-white w-6 h-6" />
             </div>
             <h1
-              class="text-2xl font-bold text-purple-400 font-display transition-all"
+              class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-display transition-all"
             >
-              Blog Científico
+              CosmosHub
             </h1>
           </div>
-        <ul class="flex gap-6 items-center font-display">
+
+          <!-- Desktop Navigation -->
+          <ul class="hidden md:flex gap-6 items-center font-display">
             <li>
               <a
                 href="#sobre"
-                class="text-slate-300 hover:text-purple-400 transition-colors font-medium"
-                >Sobre</a
+                class="flex items-center gap-2 text-slate-300 hover:text-purple-400 transition-colors font-medium group"
               >
+                <Info class="w-4 h-4 group-hover:scale-110 transition-transform" />
+                Sobre
+              </a>
             </li>
             <li>
               <a
                 href="#marte"
-                class="text-slate-300 hover:text-orange-400 transition-colors font-medium"
-                >Marte</a
+                class="flex items-center gap-2 text-slate-300 hover:text-orange-400 transition-colors font-medium group"
               >
+                <Globe class="w-4 h-4 group-hover:scale-110 transition-transform" />
+                Marte
+              </a>
             </li>
             <li>
               <a
                 href="#artigos"
-                class="text-slate-300 hover:text-pink-400 transition-colors font-medium"
-                >Artigos</a
+                class="flex items-center gap-2 text-slate-300 hover:text-pink-400 transition-colors font-medium group"
               >
+                <BookOpen class="w-4 h-4 group-hover:scale-110 transition-transform" />
+                Artigos
+              </a>
             </li>
             <li>
               <a
                 href="#eventos"
-                class="text-slate-300 hover:text-green-400 transition-colors font-medium"
-                >Eventos</a
+                class="flex items-center gap-2 text-slate-300 hover:text-green-400 transition-colors font-medium group"
               >
+                <Calendar class="w-4 h-4 group-hover:scale-110 transition-transform" />
+                Eventos
+              </a>
             </li>
             <li>
               <a
                 href="#contato"
-                class="text-slate-300 hover:text-blue-400 transition-colors font-medium"
-                >Contato</a
+                class="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors font-medium group"
               >
+                <Mail class="w-4 h-4 group-hover:scale-110 transition-transform" />
+                Contato
+              </a>
             </li>
           </ul>
+
+          <!-- Mobile Menu Button -->
+          <button 
+            @click="menuMobileAberto = !menuMobileAberto"
+            class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none z-50 relative"
+            aria-label="Toggle menu"
+          >
+            <Menu v-if="!menuMobileAberto" class="w-6 h-6" />
+            <X v-else class="w-6 h-6" />
+          </button>
         </nav>
       </header>
+
+      <!-- Mobile Sidebar Drawer -->
+      <aside 
+          class="fixed inset-y-0 right-0 w-64 bg-slate-900 border-l border-slate-700 shadow-2xl transform transition-transform duration-300 ease-in-out z-40 md:hidden flex flex-col pt-24 px-6"
+          :class="menuMobileAberto ? 'translate-x-0' : 'translate-x-full'"
+        >
+          <ul class="flex flex-col gap-6 font-display text-lg">
+            <li>
+              <a
+                href="#sobre"
+                @click="menuMobileAberto = false"
+                class="flex items-center gap-3 text-slate-300 hover:text-purple-400 transition-colors font-medium"
+              >
+                <div class="p-2 bg-slate-800 rounded-lg text-purple-400"><Info class="w-5 h-5" /></div>
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a
+                href="#marte"
+                @click="menuMobileAberto = false"
+                class="flex items-center gap-3 text-slate-300 hover:text-orange-400 transition-colors font-medium"
+              >
+                <div class="p-2 bg-slate-800 rounded-lg text-orange-400"><Globe class="w-5 h-5" /></div>
+                Marte
+              </a>
+            </li>
+            <li>
+              <a
+                href="#artigos"
+                @click="menuMobileAberto = false"
+                class="flex items-center gap-3 text-slate-300 hover:text-pink-400 transition-colors font-medium"
+              >
+                <div class="p-2 bg-slate-800 rounded-lg text-pink-400"><BookOpen class="w-5 h-5" /></div>
+                Artigos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#eventos"
+                @click="menuMobileAberto = false"
+                class="flex items-center gap-3 text-slate-300 hover:text-green-400 transition-colors font-medium"
+              >
+                <div class="p-2 bg-slate-800 rounded-lg text-green-400"><Calendar class="w-5 h-5" /></div>
+                Eventos
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contato"
+                @click="menuMobileAberto = false"
+                class="flex items-center gap-3 text-slate-300 hover:text-blue-400 transition-colors font-medium"
+              >
+                <div class="p-2 bg-slate-800 rounded-lg text-blue-400"><Mail class="w-5 h-5" /></div>
+                Contato
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <div 
+          v-if="menuMobileAberto"
+          @click="menuMobileAberto = false"
+          class="fixed inset-0 bg-slate-950/50 backdrop-blur-sm z-30 md:hidden transition-opacity"
+        ></div>
 
       <!-- Hero Section -->
       <section class="relative overflow-hidden pt-20 pb-32 px-4">
@@ -147,7 +235,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { BookOpen, Rocket } from "lucide-vue-next";
+import { BookOpen, Rocket, Info, Globe, Calendar, Mail, Menu, X } from "lucide-vue-next";
 import CosmosParticles from "./components/CosmosParticles.vue";
 import Sobre from "./components/Sobre.vue";
 import Marte from "./components/Marte.vue";
@@ -156,6 +244,7 @@ import Eventos from "./components/Eventos.vue";
 import Contato from "./components/Contato.vue";
 
 const modalAberto = ref(false);
+const menuMobileAberto = ref(false);
 </script>
 
 <style scoped>
