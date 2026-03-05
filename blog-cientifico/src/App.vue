@@ -254,9 +254,12 @@
       <!-- Footer -->
       <footer class="bg-slate-950 border-t border-slate-700 py-8 px-4">
         <div class="max-w-6xl mx-auto text-center text-slate-400">
-          <p class="flex items-center justify-center gap-2">
+          <p class="flex items-center justify-center gap-2 mb-2">
             &copy; 2025 Blog Científico. Explorando o conhecimento cósmico.
             <Rocket class="w-4 h-4 text-pink-500" />
+          </p>
+          <p class="text-sm font-semibold text-slate-500">
+            Criado por <span class="text-purple-400">Diego.PM</span>
           </p>
         </div>
       </footer>
