@@ -27,7 +27,7 @@
               <Rocket class="text-white w-6 h-6" />
             </div>
             <h1
-              class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-display transition-all"
+              class="text-2xl font-bold text-white font-display transition-all"
             >
               CosmosHub
             </h1>
@@ -160,39 +160,70 @@
         ></div>
 
       <!-- Hero Section -->
-      <section class="relative overflow-hidden pt-20 pb-32 px-4">
-        <div class="absolute inset-0 opacity-20">
+      <section class="relative overflow-hidden pt-32 pb-40 px-4 flex flex-col items-center justify-center min-h-[85vh]">
+        <div class="absolute inset-0 opacity-30 pointer-events-none">
           <div
-            class="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+            class="absolute top-20 left-10 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] animate-pulse"
+            style="animation-duration: 4s;"
           ></div>
           <div
-            class="absolute top-40 right-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl"
+            class="absolute top-40 right-10 w-96 h-96 bg-pink-600 rounded-full mix-blend-screen filter blur-[100px] animate-pulse"
+            style="animation-duration: 7s; animation-delay: 2s;"
           ></div>
           <div
-            class="absolute -bottom-8 left-40 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"
+            class="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/30 rounded-full mix-blend-screen filter blur-[120px]"
           ></div>
         </div>
 
-        <div class="relative max-w-6xl mx-auto text-center">
+        <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+          <!-- Welcome Badge -->
+          <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-md shadow-xl text-sm font-medium text-slate-300">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+            </span>
+            Bem-vindo ao CosmosHub
+          </div>
+
+          <!-- Main Title -->
           <h2
-            class="text-6xl sm:text-7xl font-bold text-white mb-6 leading-tight font-display"
+            class="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight font-display drop-shadow-2xl"
           >
             Explorando o
+            <br />
             <span
-              class="text-purple-400"
-              >Universo</span
+              class="text-purple-600 filter drop-shadow-[0_0_30px_rgba(147,51,234,0.5)]"
             >
+              Universo
+            </span>
           </h2>
-          <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+
+          <!-- Subtitle Description -->
+          <p class="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
             Descubra maravilhas cósmicas, artigos científicos fascinantes e
-            conecte-se conosco
+            conecte-se com a comunidade de exploradores.
           </p>
-          <a
-            href="#artigos"
-            class="inline-block px-8 py-4 bg-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105 font-display"
-          >
-            Explorar Artigos
-          </a>
+
+          <!-- Call to Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+            <a
+              href="#artigos"
+              class="group relative flex items-center justify-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(168,85,247,0.4)] transition-all transform hover:-translate-y-1 w-full sm:w-auto font-display overflow-hidden"
+            >
+              <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+              <span class="relative z-10 flex items-center gap-2">
+                Explorar Artigos
+                <Rocket class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </span>
+            </a>
+            
+            <a
+              href="#sobre"
+              class="group flex items-center justify-center gap-3 px-8 py-4 bg-slate-800/40 hover:bg-slate-700/60 border border-slate-600 hover:border-slate-400 text-slate-200 rounded-full font-bold text-lg backdrop-blur-md transition-all font-display w-full sm:w-auto"
+            >
+              Conhecer o Projeto
+            </a>
+          </div>
         </div>
       </section>
 
