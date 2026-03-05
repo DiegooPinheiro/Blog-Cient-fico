@@ -55,6 +55,13 @@
             </li>
             <li>
               <a
+                href="#eventos"
+                class="text-slate-300 hover:text-green-400 transition-colors font-medium"
+                >Eventos</a
+              >
+            </li>
+            <li>
+              <a
                 href="#contato"
                 class="text-slate-300 hover:text-blue-400 transition-colors font-medium"
                 >Contato</a
@@ -116,6 +123,9 @@
         @modal-closed="modalAberto = false"
       />
 
+      <!-- Eventos Section -->
+      <Eventos />
+
       <!-- Contato Section -->
       <Contato
         @modal-opened="modalAberto = true"
@@ -142,6 +152,7 @@ import CosmosParticles from "./components/CosmosParticles.vue";
 import Sobre from "./components/Sobre.vue";
 import Marte from "./components/Marte.vue";
 import Artigos from "./components/Artigos.vue";
+import Eventos from "./components/Eventos.vue";
 import Contato from "./components/Contato.vue";
 
 const modalAberto = ref(false);
