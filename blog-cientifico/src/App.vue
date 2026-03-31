@@ -160,7 +160,7 @@
         ></div>
 
       <!-- Hero Section -->
-      <section class="relative overflow-hidden pt-32 pb-40 px-4 flex flex-col items-center justify-center min-h-[85vh]">
+      <section class="relative overflow-hidden pt-32 pb-40 px-4 flex flex-col items-center justify-center min-h-screen">
         <div class="absolute inset-0 opacity-30 pointer-events-none">
           <div
             class="absolute top-20 left-10 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] animate-pulse"
