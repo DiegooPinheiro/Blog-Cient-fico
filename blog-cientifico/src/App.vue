@@ -264,12 +264,16 @@
         </div>
       </footer>
     </div>
+    
+    <!-- Vercel Speed Insights -->
+    <SpeedInsights />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { BookOpen, Rocket, Info, Globe, Calendar, Mail, Menu, X } from "lucide-vue-next";
+import { SpeedInsights } from '@vercel/speed-insights/vue';
 import CosmosParticles from "./components/CosmosParticles.vue";
 import Sobre from "./components/Sobre.vue";
 import Marte from "./components/Marte.vue";
